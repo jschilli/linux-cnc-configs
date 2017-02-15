@@ -70,5 +70,5 @@ dtg_color = yellow
 homed_color = green
 unhomed_color = red
 dro_digits = 4
-offset_axis_z = -6.5102
+offset_axis_z = -6.50077
 
