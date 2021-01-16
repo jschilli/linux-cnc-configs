@@ -5,7 +5,7 @@ loadrt and2 count=6
 # toggle2nist.1 machine on/off
 # toggle2nist.2 lights on/off
 loadrt toggle2nist count=2
-loadrt toggle count=4
+loadrt toggle count=5
 
 addf and2.0                   servo-thread
 addf and2.1                   servo-thread
@@ -21,7 +21,8 @@ addf toggle.0                 servo-thread
 addf toggle.1                 servo-thread
 addf toggle.2                 servo-thread
 addf toggle.3                 servo-thread
-addf siggen.0.update                 servo-thread
+addf toggle.4                 servo-thread
+addf siggen.0.update          servo-thread
 
 # External Program Pause/Resume and Run/Step Buttons
 # Pause/Resume Section
@@ -72,16 +73,21 @@ net estop-out hm2_7i76e.0.7i76.0.0.output-04
 
 # Handheld/Aux I/O
 
-# net ring-light-pulse <= hm2_7i76e.0.7i76.0.0.input-20
-net ring-light-hh or2.3.in0 <= hm2_7i76e.0.7i76.0.0.input-20
-net ring-light-aux or2.3.in1 <= hm2_7i76e.0.7i76.0.0.input-29-not
+# net ring-light-pulse <= hm2_7i76e.0.7i76.0.0.input-26
+net ring-light-hh or2.3.in0 <= hm2_7i76e.0.7i76.0.0.input-24
+net ring-light-aux or2.3.in1 <= hm2_7i76e.0.7i76.0.0.input-29
 
 net ring-light-push toggle.1.in <= or2.3.out
-net ring-light toggle.1.out => hm2_7i76e.0.7i76.0.0.output-09
+net ring-light toggle.1.out => hm2_7i76e.0.7i76.0.0.output-14
 
-net air-push toggle.2.in <= hm2_7i76e.0.7i76.0.0.input-21
-net air-output toggle.2.out => hm2_7i76e.0.7i76.0.0.output-10
+net air-push toggle.2.in <= hm2_7i76e.0.7i76.0.0.input-26
+net air-output toggle.2.out => hm2_7i76e.0.7i76.0.0.output-13
 
 
-net pdb-push toggle.3.in <= hm2_7i76e.0.7i76.0.0.input-22
-net pdb-output toggle.3.out => hm2_7i76e.0.7i76.0.0.output-11
+net pdb-push toggle.3.in <= hm2_7i76e.0.7i76.0.0.input-21
+net pdb-output toggle.3.out => hm2_7i76e.0.7i76.0.0.output-12
+
+net coolant-auto <= hm2_7i76e.0.7i76.0.0.input-25
+net coolant-on <= hm2_7i76e.0.7i76.0.0.input-27
+net coolant-push toggle.4.in <= hm2_7i76e.0.7i76.0.0.input-23
+net coolant-out toggle.4.out => hm2_7i76e.0.7i76.0.0.output-15
