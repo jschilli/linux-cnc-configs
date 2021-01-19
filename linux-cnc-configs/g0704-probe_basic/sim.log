@@ -1,0 +1,8 @@
+2021-01-18 16:36:45,919 - qtpyvcp.lib.decorators - WARNING - Deprecation Warning: The widget "qtpyvcp.widgets.display_widgets.dro_widget.DROWidget" has been deprecated and will be removed in the future. Reason: new DRO implementation. Replaced by: DroLabel.
+2021-01-18 16:36:51,365 - qtpyvcp.plugins.notifications - ERROR - Unexpected realtime delay on task 
+ 0 with period 100000
+This Message 
+ will only display once per 
+ session.
+Run the Latency Test and 
+ resolve before continuing.
