@@ -1,0 +1,12 @@
+# Include your custom_postgui HAL commands here
+# This file will not be overwritten when you run PNCconf again
+# Augment the display for tool change
+#net tool-change gmoccapy.toolchange-change <= iocontrol.0.tool-change
+#net tool-changed gmoccapy.toolchange-changed <= iocontrol.0.tool-changed
+#net tool-prep-number gmoccapy.toolchange-number <= iocontrol.0.tool-prep-number
+net tool-prep-loop iocontrol.0.tool-prepare <= iocontrol.0.tool-prepared
+net tool-prep-loop iocontrol.0.tool-prepare iocontrol.0.tool-prepared
+
+# Show the current offsets
+# net tooloffset-x gmoccapy.tooloffset-x <= motion.tooloffset.x
+# net tooloffset-z gmoccapy.tooloffset-z <= motion.tooloffset.z
