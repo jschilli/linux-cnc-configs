@@ -16,7 +16,7 @@ addf and2.5                   servo-thread
 addf xor2.0                   servo-thread
 addf toggle2nist.0            servo-thread
 addf toggle2nist.1            servo-thread
-addf or2.0                    servo-thread
+addf or2.pause-resume                    servo-thread
 addf toggle.0                 servo-thread
 addf toggle.1                 servo-thread
 addf toggle.2                 servo-thread
@@ -29,9 +29,9 @@ addf siggen.0.update          servo-thread
 net pause-resume-btn and2.0.in0 and2.1.in0 <= hm2_7i76e.0.7i76.0.0.input-08-not
 net pause-on toggle2nist.0.is-on <= and2.0.in1 <= and2.3.in1 <= and2.5.in1 <= halui.program.is-paused
 net run-on and2.1.in1 <= xor2.0.in0 <= halui.program.is-running
-net pause-sig or2.0.in0 <= and2.0.out
-net resume-sig or2.0.in1 <= and2.1.out
-net toggle-ok toggle.0.in <= or2.0.out
+net pause-sig or2.pause-resume.in0 <= and2.0.out
+net resume-sig or2.pause-resume.in1 <= and2.1.out
+net toggle-ok toggle.0.in <= or2.pause-resume.out
 net togglesig toggle2nist.0.in <= toggle.0.out
 net toggleon halui.program.pause <= toggle2nist.0.on
 net toggleoff halui.program.resume <= toggle2nist.0.off
@@ -59,25 +59,25 @@ net flash <= siggen.0.clock => and2.5.in0
 net green-flash <= and2.5.out => xor2.0.in1
 net green-on <= xor2.0.out 
 #=> hm2_7i76e.0.7i76.0.0.output-03
-net green-on => hm2_7i76e.0.7i76.0.0.output-03
-net green-on => hm2_7i76e.0.7i76.0.0.output-02
+#net green-on => hm2_7i76e.0.7i76.0.0.output-03
+net green-on => hm2_7i76e.0.7i76.0.0.output-04
 # add green light for switch
 
 #Red Light
-net pause-on hm2_7i76e.0.7i76.0.0.output-00
+net pause-on hm2_7i76e.0.7i76.0.0.output-05 
 
 
 
-net estop-out hm2_7i76e.0.7i76.0.0.output-04
+#net estop-out hm2_7i76e.0.7i76.0.0.output-04
 
 
 # Handheld/Aux I/O
 
 # net ring-light-pulse <= hm2_7i76e.0.7i76.0.0.input-26
-net ring-light-hh or2.3.in0 <= hm2_7i76e.0.7i76.0.0.input-24
-net ring-light-aux or2.3.in1 <= hm2_7i76e.0.7i76.0.0.input-29
+net ring-light-hh or2.ring-light.in0 <= hm2_7i76e.0.7i76.0.0.input-24
+net ring-light-aux or2.ring-light.in1 <= hm2_7i76e.0.7i76.0.0.input-29
 
-net ring-light-push toggle.1.in <= or2.3.out
+net ring-light-push toggle.1.in <= or2.ring-light.out
 net ring-light toggle.1.out => hm2_7i76e.0.7i76.0.0.output-14
 
 net air-push toggle.2.in <= hm2_7i76e.0.7i76.0.0.input-26
