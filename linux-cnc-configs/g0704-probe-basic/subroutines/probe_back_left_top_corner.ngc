@@ -42,7 +42,7 @@ o<probe_back_left_top_corner> sub
 
   (Probe Diameter)
   #<probe_diameter> = #5410
-
+(print,endmill dia = #<probe_diameter>)
   (Probing depth from the z probed clearance height, used for z moves)
   #<z_probe_stack> = [#<z_clearance> + #<probe_diameter> + #<extra_probe_depth>]
 
