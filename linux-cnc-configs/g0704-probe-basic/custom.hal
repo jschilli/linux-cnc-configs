@@ -14,3 +14,4 @@ net estop-reset iocontrol.0.user-request-enable => estop-latch.0.reset
 # hm2_7i76e.0.7i76.0.0.input-06-not
 
 source control-lights.hal
+source probing.hal
