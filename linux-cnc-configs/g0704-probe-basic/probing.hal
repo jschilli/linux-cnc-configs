@@ -24,7 +24,7 @@ net tool_length.touched             <= and2.tool_length.out
 
 net touch_probe.sensor_plugged      => and2.touch_probe.in0
 net touch_probe.sensor_tripped      => and2.touch_probe.in1
-net touch_probe.touched             <= touch_probe.sensor_tripped #and2.touch_probe.out
+net touch_probe.touched             <= and2.touch_probe.out
 
 net tool_length.touched            => or2.probe.in0
 net touch_probe.touched            => or2.probe.in1
