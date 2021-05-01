@@ -11,7 +11,8 @@ addf or2.probe              servo-thread
 
 net tool_length.sensor_tripped      <= hm2_7i76e.0.7i76.0.0.input-12-not
 net tool_length.sensor_plugged      <= hm2_7i76e.0.7i76.0.0.input-13
-net tool_length.sensor_overtravel   <= hm2_7i76e.0.7i76.0.0.input-14
+
+#net tool_length.sensor_overtravel   <= ts-limit # hm2_7i76e.0.7i76.0.0.input-14
 
 net touch_probe.sensor_tripped      <= hm2_7i76e.0.7i76.0.0.input-10-not
 net touch_probe.sensor_plugged      <= hm2_7i76e.0.7i76.0.0.input-11

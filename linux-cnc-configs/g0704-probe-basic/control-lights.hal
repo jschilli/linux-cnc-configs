@@ -1,6 +1,8 @@
 loadrt xor2 names=xor2.green
 loadrt siggen num_chan=1
-loadrt and2 count=8 names=and2.run_pause,and2.resume,and2.step,and2.paused,and2.touch_probe,and2.tool_length
+
+
+loadrt and2  names=and2.run_pause,and2.resume,and2.step,and2.run_step_resume,and2.paused,and2.idle,and2.touch_probe,and2.tool_length
 # loadrt or2 count=1
 # toggle2nist.1 machine on/off
 # toggle2nist.2 lights on/off
