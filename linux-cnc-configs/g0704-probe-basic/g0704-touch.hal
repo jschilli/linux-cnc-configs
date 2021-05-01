@@ -10,7 +10,7 @@ loadrt hostmot2
 loadrt hm2_eth board_ip="10.10.10.10" config=" num_encoders=1 num_pwmgens=0 num_stepgens=4 sserial_port_0=00xxxx" 
 setp    hm2_7i76e.0.watchdog.timeout_ns 5000000
 loadrt pid names=pid.x,pid.y,pid.z,pid.s
-loadrt or2 names=or2.pause-resume,or2.z-limits,or2.ring-light, or2.probe
+loadrt or2 names=or2.pause-resume,or2.z-limits,or2.ring-light,or2.probe
 
 addf hm2_7i76e.0.read          servo-thread
 addf motion-command-handler   servo-thread
