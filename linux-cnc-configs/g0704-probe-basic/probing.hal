@@ -1,6 +1,6 @@
 # Here we have the settings needed to make probe screen work.
 
-loadrt or2  names=or2.probe
+#loadrt or2  names=or2.probe # loaded in root HAL file
 loadrt and2 names=and2.touch_probe,and2.tool_length
 
 addf and2.touch_probe       servo-thread
