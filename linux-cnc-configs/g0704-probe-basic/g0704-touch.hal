@@ -10,7 +10,7 @@ loadrt hostmot2
 loadrt hm2_eth board_ip="10.10.10.10" config=" num_encoders=1 num_pwmgens=0 num_stepgens=4 sserial_port_0=00xxxx" 
 setp    hm2_7i76e.0.watchdog.timeout_ns 5000000
 loadrt pid names=pid.x,pid.y,pid.z,pid.s
-loadrt or2 names=or2.pause-resume,or2.probes,or2.z-limits,or2.ring-light
+loadrt or2 names=or2.pause-resume,or2.z-limits,or2.ring-light
 
 addf hm2_7i76e.0.read          servo-thread
 addf motion-command-handler   servo-thread
@@ -21,7 +21,7 @@ addf pid.z.do-pid-calcs       servo-thread
 addf pid.s.do-pid-calcs       servo-thread
 addf hm2_7i76e.0.write         servo-thread
 # Probe & TS
-addf or2.probes 		      servo-thread 
+#addf or2.probes 		      servo-thread 
 # TS Limit + Z-limit
 addf or2.z-limits		      servo-thread 
 # Ring-light Toggle
@@ -37,7 +37,7 @@ setp hm2_7i76e.0.stepgen.timer-number 1
 # external input signals
 # --- HOME-Z ---
 
-net ts-limit or2.z-limits.in0 <= hm2_7i76e.0.7i76.0.0.input-11
+net ts-limit or2.z-limits.in0 <= hm2_7i76e.0.7i76.0.0.input-14
 net z-limit or2.z-limits.in1 <= hm2_7i76e.0.7i76.0.0.input-06-not
 
 net min-home-z  <= or2.z-limits.out
@@ -307,11 +307,11 @@ net coolant-mist      <=  iocontrol.0.coolant-mist
 net coolant-flood     <=  iocontrol.0.coolant-flood
 
 #  ---probe signal---
-net probe-present <= hm2_7i76e.0.7i76.0.0.input-12
+#net probe-present <= hm2_7i76e.0.7i76.0.0.input-12
 # TS
-net workprobe1 or2.probes.in0 <= hm2_7i76e.0.7i76.0.0.input-10
-net workprobe2 or2.probes.in1 <= hm2_7i76e.0.7i76.0.0.input-13
-net probe-in     =>  motion.probe-input <= or2.probes.out
+#net workprobe1 or2.probes.in0 <= hm2_7i76e.0.7i76.0.0.input-10
+#net workprobe2 or2.probes.in1 <= hm2_7i76e.0.7i76.0.0.input-13
+#net probe-in     =>  motion.probe-input <= or2.probes.out
 
 #  ---motion control signals---
 
