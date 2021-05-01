@@ -2,8 +2,7 @@
 
 #loadrt or2  names=or2.probe # loaded in root HAL file
 #loadrt and2 names=and2.touch_probe,and2.tool_length
-alias param and2.6 and2.touch_probe
-alias param and2.7 and2.tool_length
+
 addf and2.touch_probe       servo-thread
 addf and2.tool_length       servo-thread
 addf or2.probe              servo-thread
