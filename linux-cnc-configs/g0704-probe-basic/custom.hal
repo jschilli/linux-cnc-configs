@@ -1,0 +1,17 @@
+# Include your custom HAL commands here
+# This file will not be overwritten when you run PNCconf again
+
+# estop
+loadrt estop_latch
+addf estop-latch.0 servo-thread
+#net remote-estop-unlatched => hm2_7i76e.0.7i76.0.0.output-12
+#setp remote-estop-unlatched true
+net estop-loopout iocontrol.0.emc-enable-in <= estop-latch.0.ok-out
+net estop-loopin iocontrol.0.user-enable-out => estop-latch.0.ok-in
+net estop-reset iocontrol.0.user-request-enable => estop-latch.0.reset
+# NOT hooked to anything - reserved for door alarm
+#net remote-estop estop-latch.0.fault-in <=  hm2_7i76e.0.7i76.0.0.input-14
+# hm2_7i76e.0.7i76.0.0.input-06-not
+
+source control-lights.hal
+source probing.hal

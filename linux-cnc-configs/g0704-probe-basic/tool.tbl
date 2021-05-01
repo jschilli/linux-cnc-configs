@@ -1,0 +1,23 @@
+;Tool  Pocket Z Offset     Diameter     Remark
+T1     P0     Z+2.696000   D+0.000000   ; 1/4 2 flute
+T2     P0     Z+3.221000   D+0.000000   ; 3/8 2 fl
+T6     P0     Z+3.083000   D+0.000000   ; 1/8 carbide
+T7     P0     Z+2.980000   D+0.000000   ; 1/4 carbide 4 flute endmill
+T9     P0     Z+2.729100   D+0.000000   ; 1/4 2 flute
+T20    P0     Z+1.858000   D+0.000000   ; super fly
+T21    P0     Z+2.845000   D+0.000000   ; shear hog
+T31    P0     Z+4.161000   D+0.000000   ; 3/8 Drill HSS
+T32    P0     Z+4.770000   D+0.000000   ; #7
+T36    P0     Z+4.768000   D+0.000000   ; .25 drill jobber
+T37    P0     Z+4.396000   D+0.000000   ; TEMP Letter x
+T41    P0     Z+3.259000   D+0.000000   ; 3/8 chamfer mill
+T42    P0     Z+2.872000   D+0.000000   ; 1/4 spot drill
+T43    P0     Z+2.836700   D+0.000000   ; 1/8 spot drill - carbide
+T47    P0     Z+3.365000   D+0.000000   ; temp letter c
+T48    P0     Z+5.424000   D+0.000000   ; 5/16 drill
+T49    P0     Z+6.569000   D+0.000000   ; 1/2 drill
+T50    P0     Z+3.040000   D+0.000000   ; .020 engraver ball mill
+T51    P0     Z+3.248000   D+0.000000   ; 2L .005 30deg engraver
+T95    P95    Z+5.154000   D+0.125000   ; Touch probe
+T98    P0     Z+1.000000   D+0.000000   ; TEMP 1" offset
+T99    P99    Z+6.137700   D+0.000000   ; Haimer probe
