@@ -2,9 +2,11 @@
 
 [x] verify y offset in homing
 [x] ensure home all works
-[] mount spindle & motor
+[x] mount spindle
+[] mount motor
 [] ensure motor speed control works
-[] tram column and head
+[] tram column
+[] tram head
 [] hook up oiler and ensure lubrication
 [] test probe
 [] mount toolsetter and add macro to control offset verification
